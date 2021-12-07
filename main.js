@@ -1,5 +1,7 @@
+lipsX=
+lipsY=
 function preload(){
-
+lips=loadImage('https://postimg.cc/PNxPDM9C');
 }
 function setup(){
     canvas=createCanvas(300,300);
@@ -12,9 +14,11 @@ function setup(){
 }
 function gotPoses(results){
   if (results.length > 0) {
+    lipsX=+results[0].pose.nose.x -190;
+    lipsY=+results[0].pose.nose.y -174;
       console.log(results);
-      console.log("nose x=" +results[0].pose.nose.x);
-      console.log("nose y=" +results[0].pose.nose.y);
+      console.log("nose x="+lipsX);
+      console.log("nose y="+lipsY);
   }
   
 }
